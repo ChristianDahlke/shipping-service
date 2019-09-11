@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: shipping-service-17
+  name: shipping-service-17
+  namespace: lab-cnb
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: shipping-service-17
+    spec:
+      containers:
+      - image: uk.icr.io/lab-cnb/shipping-service-17:v1.0.1
+        name: shipping-service-17
+        ports:
+        - name: app-port
+          containerPort: 3001
