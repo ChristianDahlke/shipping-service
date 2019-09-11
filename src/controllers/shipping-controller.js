@@ -12,7 +12,7 @@ class ShippingController {
     var shippingAmount = await productService.getProductWeight(item.id)
     // part of src/shipping-controller.js
     if (item.type.toLowerCase() === 'overnight') {
-      return shippingAmount * this.OVERNIGHT_PRICE
+      return shippingAmount * this.OVERNIGHT_PRICE + 1
     } else {
       return shippingAmount * this.REGULAR_PRICE
     }
